@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: lleiwang
+title: 零界阿肯
 subtitle: '｡◕ᴗ◕｡'
-description: '一段中文描述看看情况'
-keywords:
+description: '带娃 | 奶爸 | 看书 | 编程 | 瞎折腾'
+keywords: 
 author: llei.wang
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -106,3 +106,12 @@ deploy:
   type: git
   repo: git@github.com:lleiwang/lleiwang.github.io.git
   branch: main
+
+#### For Pages Search
+## Plugin: hexo-generator-searchdb 
+## 
+# search:
+#   path: search.xml
+#   field: all
+#   content: true
+#   format: html
