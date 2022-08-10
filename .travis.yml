@@ -15,9 +15,18 @@ branches:
 script:
   - hexo clean
   - hexo generate # generate static files
-after_success:
-  - cd ./public
-  - git init
-  - git add --all .
-  - git commit -m "Travis CI Auto Builder"
-  - git push --quiet --force https://$GH_TOKEN@github.com/lleiwang/lleiwang.github.io.git gh-pages
+  - hexo deploy
+#after_success:
+#  - cd ./public
+#  - git init
+#  - git add --all .
+#  - git commit -m "Travis CI Auto Builder:Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }})"
+#  - git push --quiet --force https://$GH_TOKEN@github.com/lleiwang/lleiwang.github.io.git gh-pages
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_TOKEN
+  keep-history: true
+  on:
+    branch: gh-test-pages
+  local-dir: public
