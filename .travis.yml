@@ -1,13 +1,14 @@
 sudo: false
 language: node_js
 node_js:
-  - 16 # use nodejs v10 LTS
+  - 16 # use nodejs v16 LTS
 cache: npm
 before_install:
   - git config --global user.name "lleiwang"
   - git config --global user.email "l.l.wang@foxmail.com"
   - npm install -g hexo-cli
   - export HEXO_DEPLOYER_REPO=https://$GH_TOKEN@github.com/lleiwang/lleiwang.github.io.git
+  - export TZ='Asia/Shanghai'
 install:
   - npm i
 branches:
@@ -17,18 +18,19 @@ script:
   - hexo clean
   - hexo generate # generate static files
   - hexo deploy
-after_success:
-  - cd ./public
-  - git init
-  - git add --all .
-  #- git commit -m "Travis CI Auto Builder:Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }})"
-  - git commit -m "Travis CI Auto Builder"
-  - git push --quiet --force https://$GH_TOKEN@github.com/lleiwang/lleiwang.github.io.git gh-after-pages
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GH_TOKEN
-  keep-history: true
-  on:
-    branch: main
-  local-dir: public
+
+#after_success:
+#  - cd ./public
+#  - git init
+#  - git add --all .
+#  - git commit -m "Travis CI Auto Builder"
+#  - git push --quiet --force https://$GH_TOKEN@github.com/lleiwang/lleiwang.github.io.git gh-after-pages
+
+#deploy:
+#  provider: pages
+#  skip-cleanup: true
+#  github-token: $GH_TOKEN
+#  keep-history: true
+#  on:
+#    branch: main
+#  local-dir: public

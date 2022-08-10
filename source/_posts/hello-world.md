@@ -7,6 +7,10 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 
 快速启动中文，尝试部署并展示
 
+
+
+验证双端一致性 Wed Aug 10 14:18:27 CST 2022
+
 ### Create a new post
 
 ``` bash
