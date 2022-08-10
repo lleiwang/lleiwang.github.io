@@ -1,0 +1,23 @@
+sudo: false
+language: node_js
+node_js:
+  - 16 # use nodejs v10 LTS
+cache: npm
+before_install:
+  - git config --global user.name "lleiwang"
+  - git config --global user.email "l.l.wang@foxmail.com"
+  - npm install -g hexo-cli
+install:
+  - npm i
+branches:
+  only:
+    - master # build master branch only
+script:
+  - hexo clean
+  - hexo generate # generate static files
+after_success:
+  - cd ./public
+  - git init
+  - git add --all .
+  - git commit -m "Travis CI Auto Builder"
+  - git push --quiet --force https://$GH_TOKEN@github.com/lleiwang/lleiwang.github.io.git gh-pages
