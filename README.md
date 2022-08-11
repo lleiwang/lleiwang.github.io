@@ -1,6 +1,4 @@
-# lleiwang-hexo-source
-
-## 主题安装：
+## 基础搭建：
 
 ##### Hexo 官网
 
@@ -16,6 +14,7 @@
 
 ## 变更历史
 
+##### Comming Soon.
 
 
 
